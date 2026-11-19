@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nabila Durian House - Durian Asli Purwokerto</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --hijau: #2f5d3a;
+      --hijau-muda: #e3f0d8;
+      --kuning: #f2c230;
+      --kuning-muda: #fff4c2;
+      --krem: #fffdf3;
+      --teks: #2b2b2b;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: "Poppins", Arial, sans-serif;
+      background: var(--krem);
+      color: var(--teks);
+      line-height: 1.7;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 14px;
+      background: var(--hijau-muda);
+    }
+
+    h2 {
+      color: var(--hijau);
+      margin-top: 0;
+    }
+
+    section { padding: 50px 20px; }
+
+    .isi {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    /* ===== NAVBAR ===== */
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: var(--hijau);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      padding: 12px 24px;
+    }
+
+    .navbar .merek {
+      color: var(--kuning);
+      font-weight: 700;
+      font-size: 1.2rem;
+      text-decoration: none;
+    }
+
+    .navbar ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .navbar ul a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 0.95rem;
+    }
+
+    .navbar ul a:hover { color: var(--kuning); }
+
+    /* ===== HERO ===== */
+    .hero {
+      background: linear-gradient(135deg, var(--hijau) 0%, #44804f 100%);
+      color: #fff;
+      text-align: center;
+      padding: 80px 20px;
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+      margin: 0 0 10px;
+      color: var(--kuning);
+    }
+
+    .hero p {
+      max-width: 560px;
+      margin: 0 auto 24px;
+      font-size: 1.05rem;
+    }
+
+    .hero-img {
+      display: block;
+      width: 260px;
+      max-width: 70%;
+      margin: 0 auto 24px;
+      border-radius: 18px;
+      background: #fff;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 28px;
+      border-radius: 30px;
+      font-weight: 600;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      font-family: inherit;
+      font-size: 1rem;
+      transition: transform 0.2s;
+    }
+
+    .btn:hover { transform: translateY(-2px); }
+
+    .btn-utama { background: var(--kuning); color: var(--hijau); }
+    .btn-wa { background: #25d366; color: #fff; }
+
+    /* ===== KEUNGGULAN (KARTU) ===== */
+    .kartu-wrap {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+    }
+
+    .kartu {
+      background: #fff;
+      padding: 24px;
+      border-radius: 14px;
+      border-top: 6px solid var(--kuning);
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+    }
+
+    .kartu h3 { margin-top: 0; color: var(--hijau); }
+
+    /* ===== MENU ===== */
+    #menu { background: var(--hijau-muda); }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #fff;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+    }
+
+    th, td { padding: 12px 16px; text-align: left; }
+
+    th { background: var(--hijau); color: #fff; }
+
+    tbody tr:nth-child(even) { background: var(--kuning-muda); }
+
+    tfoot td {
+      font-size: 0.85rem;
+      color: #666;
+      background: #fff;
+    }
+
+    .topping {
+      margin-top: 24px;
+      background: #fff;
+      padding: 16px 24px;
+      border-radius: 12px;
+      border-left: 6px solid var(--kuning);
+    }
+
+    .topping h3 { margin: 0 0 6px; color: var(--hijau); }
+
+    /* ===== GALERI ===== */
+    .galeri {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .galeri figure { margin: 0; }
+
+    .galeri img { background: #fff; }
+
+    .galeri figcaption {
+      text-align: center;
+      font-size: 0.85rem;
+      color: #666;
+      margin-top: 6px;
+    }
+
+    .video-wrap {
+      margin-top: 24px;
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      border-radius: 14px;
+    }
+
+    .video-wrap iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    /* ===== FAQ ===== */
+    #faq { background: var(--kuning-muda); }
+
+    details {
+      background: #fff;
+      border-radius: 10px;
+      padding: 12px 18px;
+      margin-bottom: 10px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+    }
+
+    summary {
+      cursor: pointer;
+      font-weight: 600;
+      color: var(--hijau);
+    }
+
+    details p { margin: 10px 0 0; }
+
+    /* ===== FORM ===== */
+    form {
+      background: #fff;
+      padding: 24px;
+      border-radius: 14px;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+      max-width: 540px;
+    }
+
+    label {
+      display: block;
+      font-weight: 600;
+      margin: 12px 0 4px;
+    }
+
+    input[type="text"],
+    input[type="tel"],
+    input[type="number"],
+    input[type="date"],
+    select,
+    textarea {
+      width: 100%;
+      padding: 10px;
+      border: 2px solid var(--hijau-muda);
+      border-radius: 8px;
+      font-family: inherit;
+      font-size: 1rem;
+    }
+
+    input:focus, select:focus, textarea:focus {
+      outline: none;
+      border-color: var(--kuning);
+    }
+
+    form button { margin-top: 16px; background: var(--hijau); color: #fff; }
+
+    .pesan-cepat { margin-bottom: 20px; }
+
+    /* ===== LOKASI ===== */
+    #lokasi { background: var(--hijau); color: #fff; }
+    #lokasi h2 { color: var(--kuning); }
+
+    #lokasi address { font-style: normal; font-weight: 600; }
+
+    #lokasi iframe {
+      width: 100%;
+      height: 280px;
+      border: 0;
+      border-radius: 14px;
+      margin-top: 14px;
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: #1f4028;
+      color: var(--hijau-muda);
+      text-align: center;
+      padding: 16px;
+      font-size: 0.9rem;
+    }
+
+    footer p { margin: 0; }
+
+    @media (max-width: 600px) {
+      .hero h1 { font-size: 1.8rem; }
+      .navbar { justify-content: center; gap: 8px; }
+      th, td { padding: 8px; font-size: 0.9rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <a class="merek" href="#atas">Nabila Durian House</a>
+    <ul>
+      <li><a href="#keunggulan">Keunggulan</a></li>
+      <li><a href="#menu">Menu</a></li>
+      <li><a href="#galeri">Galeri</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="#pesan">Pesan</a></li>
+      <li><a href="#lokasi">Lokasi</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero" id="atas">
+    <img class="hero-img" src="jpg.bila.jpg" alt="Durian utuh dan daging durian">
+    <h1>Nabila Durian House</h1>
+    <p>Daging durian asli, susu kental manis, dan es serut halus. Segar,
+       legit, dan bikin nagih di tengah panasnya siang.</p>
+    <a class="btn btn-utama" href="#pesan">Pesan Sekarang</a>
+  </header>
+
+  <main>
+
+    <!-- KEUNGGULAN -->
+    <section id="keunggulan">
+      <div class="isi">
+        <h2>Kenapa Durian Kami?</h2>
+        <div class="kartu-wrap">
+          <div class="kartu">
+            <h3>Durian Asli</h3>
+            <p>Daging durian dipilih langsung dari petani, tanpa perisa buatan.</p>
+          </div>
+          <div class="kartu">
+            <h3>Porsi Pas</h3>
+            <p>Daging durian tebal di setiap gelas, nggak pelit.</p>
+          </div>
+          <div class="kartu">
+            <h3>Harga Bersahabat</h3>
+            <p>Mulai dari Rp12.000, cocok buat kantong pelajar.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MENU -->
+    <section id="menu">
+      <div class="isi">
+        <h2>Menu dan Harga</h2>
+        <table>
+          <thead>
+            <tr><th>Menu</th><th>Ukuran</th><th>Harga</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Es Durian Original</td><td>Gelas 350 ml</td><td>Rp12.000</td></tr>
+            <tr><td>Es Durian Alpukat</td><td>Gelas 350 ml</td><td>Rp15.000</td></tr>
+            <tr><td>Es Durian Ketan Hitam</td><td>Mangkuk</td><td>Rp18.000</td></tr>
+            <tr><td>Es Durian Jumbo (sharing)</td><td>Mangkuk besar</td><td>Rp30.000</td></tr>
+          </tbody>
+          <tfoot>
+            <tr><td colspan="3">*Harga bisa berubah mengikuti musim durian.</td></tr>
+          </tfoot>
+        </table>
+
+        <div class="topping">
+          <h3>Topping Tambahan (+Rp3.000)</h3>
+          <ul>
+            <li>Nangka</li>
+            <li>Cincau hitam</li>
+            <li>Biji selasih</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- GALERI -->
+    <section id="galeri">
+      <div class="isi">
+        <h2>Galeri</h2>
+        <div class="galeri">
+          <figure>
+            <img src="jpg.bila.jpg" alt="Durian utuh dan daging durian segar">
+            <figcaption>Durian Asli Pilihan</figcaption>
+          </figure>
+        </div>
+
+        <!-- Video YouTube: ganti VIDEO_ID dengan ID video kamu -->
+        <div class="video-wrap">
+          <iframe src="https://www.youtube.com/embed/VIDEO_ID"
+                  title="Cara pembuatan es durian" allowfullscreen></iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq">
+      <div class="isi">
+        <h2>Pertanyaan Umum</h2>
+        <details>
+          <summary>Apakah bisa diantar?</summary>
+          <p>Bisa, untuk area Purwokerto. Ongkir menyesuaikan jarak.</p>
+        </details>
+        <details>
+          <summary>Apakah durian pasti ada setiap hari?</summary>
+          <p>Stok tergantung musim. Untuk pesanan banyak, sebaiknya pesan sehari sebelumnya.</p>
+        </details>
+        <details>
+          <summary>Bisa pesan untuk acara?</summary>
+          <p>Bisa, minimal 20 gelas. Hubungi kami lewat WhatsApp.</p>
+        </details>
+      </div>
+    </section>
+
+    <!-- PESAN -->
+    <section id="pesan">
+      <div class="isi">
+        <h2>Pesan Es Durian</h2>
+        <p class="pesan-cepat">
+          <a class="btn btn-wa" href="https://wa.me/62895322388524?text=Halo%20Nabila%20Durian%20House,%20saya%20mau%20pesan%20durian" target="_blank">Chat via WhatsApp</a>
+        </p>
+
+        <form action="#" method="post">
+          <label for="nama">Nama</label>
+          <input type="text" id="nama" name="nama" required>
+
+          <label for="hp">Nomor WhatsApp</label>
+          <input type="tel" id="hp" name="hp" placeholder="0812..." required>
+
+          <label for="menu-pilih">Pilih menu</label>
+          <select id="menu-pilih" name="menu">
+            <option value="original">Es Durian Original</option>
+            <option value="alpukat">Es Durian Alpukat</option>
+            <option value="ketan">Es Durian Ketan Hitam</option>
+            <option value="jumbo">Es Durian Jumbo</option>
+          </select>
+
+          <label for="jumlah">Jumlah</label>
+          <input type="number" id="jumlah" name="jumlah" min="1" value="1">
+
+          <label for="tanggal">Tanggal ambil/antar</label>
+          <input type="date" id="tanggal" name="tanggal">
+
+          <label for="catatan">Catatan</label>
+          <textarea id="catatan" name="catatan" rows="3" placeholder="Contoh: tanpa topping"></textarea>
+
+          <button type="submit" class="btn">Kirim Pesanan</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- LOKASI -->
+    <section id="lokasi">
+      <div class="isi">
+        <h2>Lokasi dan Jam Buka</h2>
+        <address>Nasi Rica JJ Kepetek, Mersi, Kec. Purwokerto Tim., Kabupaten Banyumas, Jawa Tengah 53112</address>
+        <p>Setiap hari, 10.00 - 21.00 WIB</p>
+        <iframe src="https://www.google.com/maps?q=Nasi+Rica+JJ+Kepetek,+Mersi,+Purwokerto+Timur,+Banyumas&output=embed"
+                title="Peta lokasi Nabila Durian House" loading="lazy"></iframe>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Nabila Durian House. Nasi Rica JJ Kepetek, Mersi, Kec. Purwokerto Tim., Kabupaten Banyumas, Jawa Tengah 53112.</p>
+  </footer>
+
+</body>
+</html>
